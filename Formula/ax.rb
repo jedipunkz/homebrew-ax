@@ -34,6 +34,22 @@ class Ax < Formula
     bin.install Dir["ax_v#{version}_*"].first => "ax"
   end
 
+  def post_install
+    pid_file = Pathname.new(Dir.home) / ".ax" / "daemon.pid"
+    if pid_file.exist?
+      pid = pid_file.read.strip.to_i
+      if pid.positive?
+        begin
+          Process.kill("TERM", pid)
+          ohai "Stopped ax daemon (PID: #{pid})"
+        rescue Errno::ESRCH
+          # Process already exited
+        end
+      end
+      pid_file.delete
+    end
+  end
+
   test do
     assert_match "Manage multiple Claude Code agents", shell_output("#{bin}/ax --help 2>&1")
   end
