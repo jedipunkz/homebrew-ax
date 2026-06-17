@@ -3,30 +3,30 @@
 class Ax < Formula
   desc "Run multiple Claude Code agents in parallel, each isolated in its own git worktree, and monitor them all from a single terminal dashboard"
   homepage "https://github.com/jedipunkz/ax"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/jedipunkz/ax/releases/download/v#{version}/ax_v#{version}_darwin_amd64"
-      sha256 "0e388dbf159920bf3dcc20d1eb59f2a082ecfdfef4fe59dab1e22e3da14fd695"
+      sha256 "ad34aa0b0465f96e505215df4e609e72b7b6bb3fdd299482ecef77414801fa86"
     end
 
     on_arm do
       url "https://github.com/jedipunkz/ax/releases/download/v#{version}/ax_v#{version}_darwin_arm64"
-      sha256 "d9bdfa163bf5f979af0908bed051a4f2ea980b504f9743c7328a52ba041a1c8e"
+      sha256 "e0570dce4acd3f9733481407638a22ba039fad1378fde2acec5c05187f4cda16"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/jedipunkz/ax/releases/download/v#{version}/ax_v#{version}_linux_amd64"
-      sha256 "3db83a38dd4793bf247119764dfd2dbee0b6bfac43d11cc9746487022fa94a2a"
+      sha256 "d38c8c344c244186330695f4b29926aa56fe97711fc062109a87316ceafc9702"
     end
 
     on_arm do
       url "https://github.com/jedipunkz/ax/releases/download/v#{version}/ax_v#{version}_linux_arm64"
-      sha256 "029a3df4d0ef6c2b45a2dffab0fe1b02ae6f33b528e82a6fb9c868b9211e3e31"
+      sha256 "2b5f473dfd5c5940ae1b1e1f8e9a92f175a967d44d40ac8d8a8e07e2eca03fbb"
     end
   end
 
